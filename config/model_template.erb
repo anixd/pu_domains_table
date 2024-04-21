@@ -1,0 +1,15 @@
+# frozen_string_literal: true
+
+class <%= args[:name].camelize %> < ActiveRecord::Base
+<% attributes.each do |attr_name, attr_type| %>
+  # Add your attributes here
+  # attribute :<%= attr_name %>, :<%= attr_type %>
+<% end %>
+
+  # Include validations
+  # validates :name, presence: true
+
+  # Include your association here
+  # has_many :related_models
+end
+

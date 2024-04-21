@@ -1,0 +1,11 @@
+class Create<%= model_name.camelize %> < ActiveRecord::Migration[7.1]
+  def change
+    create_table :<%= model_name.pluralize.underscore %> do |t|
+    <% attributes.each do |attr_name, attr_type| %>
+      t.<%= attr_type %> :<%= attr_name %>
+    <% end %>
+
+    t.timestamps
+    end
+  end
+end
